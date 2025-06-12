@@ -1,0 +1,99 @@
+[
+  {
+    "name": "Tawaghe",
+    "city": "Tchad",
+    "distance": "50",
+    "price": 20,
+    "image": ["https://res.cloudinary.com/dpu8bawhs/image/upload/v1749573863/hoteltchad_gtbuzu.jpg"],
+    "description": "Vista panoramica e servizi eccellenti"
+  },
+  {
+    "name": "Mango",
+    "city": "Tchad",
+    "distance": "50",
+    "price": 20,
+    "image": ["https://res.cloudinary.com/dpu8bawhs/image/upload/v1749573863/hoteltchad_gtbuzu.jpg"],
+    "description": "Vista panoramica e servizi eccellenti"
+  },
+  {
+    "name": "Dar salam",
+    "city": "Tanzania",
+    "distance": "50",
+    "price": 20,
+    "image": ["https://res.cloudinary.com/dpu8bawhs/image/upload/v1749573863/fotofantasy_ujoydm.jpg"],
+    "description": "Vista panoramica e servizi eccellenti"
+  },
+  {
+    "name": "Yaoundè",
+    "city": "Camerun",
+    "distance": "50",
+    "price": 20,
+    "image": ["https://res.cloudinary.com/dpu8bawhs/image/upload/v1749573862/fotocamera_zazkon.jpg"],
+    "description": "Vista panoramica e servizi eccellenti"
+  },
+  {
+    "name": "Windhoek",
+    "city": "Namibia",
+    "distance": "50",
+    "price": 20,
+    "image": ["https://res.cloudinary.com/dpu8bawhs/image/upload/v1749573862/Afrihotel_f3vyku.jpg"],
+    "description": "Vista panoramica e servizi eccellenti"
+  },
+  {
+    "name": "Roma",
+    "city": "Italia",
+    "distance": "50",
+    "price": 120,
+    "image": ["https://res.cloudinary.com/dpu8bawhs/image/upload/v1749573862/cioncola_eb6yqx.jpg"],
+    "description": "Vista panoramica e servizi eccellenti"
+  },
+  {
+    "name": "Adis ababa hotel",
+    "city": "Etiopia",
+    "distance": "50",
+    "price": 120,
+    "image": ["https://res.cloudinary.com/dpu8bawhs/image/upload/v1749573862/dalal_b3ohrs.jpg"],
+    "description": "Vista panoramica e servizi avanguardia"
+  },
+  {
+    "name": "Antananarivo",
+    "city": "Madagascar",
+    "distance": "50",
+    "price": 100,
+    "image": ["https://res.cloudinary.com/dpu8bawhs/image/upload/v1749573862/bellafoto_sloopy.jpg"],
+    "description": "Vista al mare e panoramica e servizi avanguardia"
+  },
+  {
+    "name": "Victoria",
+    "city": "Seychelles",
+    "distance": "50",
+    "price": 100,
+    "image": ["https://res.cloudinary.com/dpu8bawhs/image/upload/v1749573689/cloud-upload/1749573689187-313287258-gonow.jpg.png"],
+    "description": "Vista al mare e panoramica e servizi avanguardia"
+  },
+  {
+    "name": "Port Louis",
+    "city": "Mauritius",
+    "distance": "50",
+    "price": 100,
+    "image": ["https://res.cloudinary.com/dpu8bawhs/image/upload/v1749309637/cloud-upload/1749309636675-702016306-hotelf.jpg.png"],
+    "description": "Vista al mare e panoramica e servizi avanguardia"
+  },
+  {
+    "name": "Praslin",
+    "city": "Seychelles",
+    "distance": "50",
+    "price": 100,
+    "image": ["https://res.cloudinary.com/dpu8bawhs/image/upload/v1749583252/cloud-upload/1749583252792-863136863-Madagascar.jpg.png"],
+    "description": "Vista al mare e panoramica e servizi avanguardia"
+  },
+  {
+    "name": "Zanzibar",
+    "city": "Tanzania",
+    "distance": "50",
+    "price": 100,
+    "image": ["https://res.cloudinary.com/dpu8bawhs/image/upload/v1749583228/cloud-upload/1749583228078-797777130-victoria.jpg.png"],
+    "description": "Vista al mare e panoramica e servizi avanguardia"
+  }
+]
+

@@ -1,0 +1,95 @@
+[
+
+{
+    "name": "Tawaghe",
+    "city": "Tchad",
+    "distance": "50",
+    "price": 20,
+    "image": [
+        "https://res.cloudinary.com/dpu8bawhs/image/upload/v1749573863/hoteltchad_gtbuzu.jpg"
+    ],
+    "description": "Vista panoramica e servizi eccellenti",
+    "rooms": [],
+    "_id": "684866cb1d798f6b53c131f3",
+    "createdAt": "2025-06-10T17:09:31.869Z",
+    "updatedAt": "2025-06-10T17:09:31.869Z",
+    "__v": 0
+},
+{
+    "name": "Mango",
+    "city": "Tchad",
+    "distance": "50",
+    "price": 20,
+    "image": [
+        "https://res.cloudinary.com/dpu8bawhs/image/upload/v1749573863/hoteltchad_gtbuzu.jpg"
+    ],
+    "description": "Vista panoramica e servizi eccellenti",
+    "rooms": [],
+    "_id": "684869f11d798f6b53c131f9",
+    "createdAt": "2025-06-10T17:22:57.133Z",
+    "updatedAt": "2025-06-10T17:22:57.133Z",
+    "__v": 0
+},
+{
+ "name": "Dar salam",
+    "city": "Tanzania",
+    "distance": "50",
+    "price": 20,
+    "image": [
+        "https://res.cloudinary.com/dpu8bawhs/image/upload/v1749573863/fotofantasy_ujoydm.jpg"
+    ],
+    "description": "Vista panoramica e servizi eccellenti",
+    "rooms": [],
+    "_id": "68486b841d798f6b53c131ff",
+    "createdAt": "2025-06-10T17:29:40.701Z",
+    "updatedAt": "2025-06-10T17:29:40.701Z",
+    "__v": 0
+},
+{
+    "name": "Yaoundè",
+    "city": "Camerun",
+    "distance": "50",
+    "price": 20,
+    "image": [
+        "https://res.cloudinary.com/dpu8bawhs/image/upload/v1749573862/fotocamera_zazkon.jpg"
+    ],
+    "description": "Vista panoramica e servizi eccellenti",
+    "rooms": [],
+    "_id": "68486c7c1d798f6b53c13202",
+    "createdAt": "2025-06-10T17:33:48.514Z",
+    "updatedAt": "2025-06-10T17:33:48.514Z",
+    "__v": 0
+},
+{
+    "name": "Windhoek",
+    "city": "Namibia",
+    "distance": "50",
+    "price": 20,
+    "image": [
+        "https://res.cloudinary.com/dpu8bawhs/image/upload/v1749573862/Afrihotel_f3vyku.jpg"
+    ],
+    "description": "Vista panoramica e servizi eccellenti",
+    "rooms": [],
+    "_id": "68487305566c8faddb7816ab",
+    "createdAt": "2025-06-10T18:01:41.964Z",
+    "updatedAt": "2025-06-10T18:01:41.964Z",
+    "__v": 0
+},
+{
+    "name": "Roma",
+    "city": "italia",
+    "distance": "50",
+    "price": 120,
+    "image": [
+        "https://res.cloudinary.com/dpu8bawhs/image/upload/v1749573862/cioncola_eb6yqx.jpg"
+    ],
+    "description": "Vista panoramica e servizi eccellenti",
+    "rooms": [],
+    "_id": "6848738f566c8faddb7816b1",
+    "createdAt": "2025-06-10T18:03:59.890Z",
+    "updatedAt": "2025-06-10T18:03:59.890Z",
+    "__v": 0
+}
+
+
+]
