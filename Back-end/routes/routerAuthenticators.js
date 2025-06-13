@@ -29,14 +29,23 @@ router.post('/register', async (req, res) => {
 //  const user =  new userModel(obj)
 //  const userSave = await user.save()
 //   return res.status(201).json(userSave)
-
-const password = req.body.pasword;
+// const password = req.body.pasword;
+const { fullname, username, email, password } = req.body;
+if (!password) {
+  return res.status(400).json({ message: "Password is required" });
+}
+const hashedPassword = await bcrypt.hash(password, seltRounds);
 
 const user= new userModel({
-    ...req.body,
-    password: await bcrypt.hash(password, seltRounds)
 
-})
+    fullname,
+    username,
+    email,
+    password: hashedPassword
+    // ...req.body,
+    // password: await bcrypt.hash(password, seltRounds)
+
+});
 const userSave = await user.save()
 return res.status(201).json(userSave)
 

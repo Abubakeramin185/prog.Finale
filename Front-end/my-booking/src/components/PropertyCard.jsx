@@ -18,6 +18,8 @@ export default function PropertyCard({ hotel, onClick }) {
           {hotel.rating ? `Valutazione: ${hotel.rating}` : ''}
           <br />
           Prezzo: {hotel.price}€
+           {hotel.wifi ? "📶 Wi-Fi " : ""} 
+          {hotel.parking ? "🅿️ Parcheggio" : ""}
         </Card.Text>
       </Card.Body>
     </Card>

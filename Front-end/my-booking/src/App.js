@@ -17,6 +17,7 @@ import AreaCommenti from './components/AreaCommenti';
 import ImageUploader from './components/ImageUploader';
 import ProfilePage from './components/ComponentProfile';
 import BookingPage from './components/BookingPage';
+import RegistraStrutturaPage from './components/RegistraStrutturaPage';
 
 
 
@@ -42,7 +43,7 @@ function App() {
           <Route path='imageuploader' element={<ImageUploader/>}/>
           <Route path='page' element={<ProfilePage/>}/>
           <Route path='/book/:id' element={<BookingPage/>}/>
-          
+          <Route path='struttura' element={<RegistraStrutturaPage/>}/>
 
           
         

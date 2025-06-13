@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const pricePerNight = document.getElementById("pricePerNight");
   const totalPrice = document.getElementById("totalPrice");
   const bookNowBtn = document.getElementById("bookNow");
+  const click = document.getElementById("clicck")
 
   // Calcolo del prezzo totale
   function calculateTotal() {
@@ -47,27 +48,54 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(err => console.error("Errore:", err));
     */
   });
+fetch('http://localhost:3001/api/hotels')
+  .then(res => res.json())
+  .then(data => {
+    const container = document.querySelector('.cards');
+    container.innerHTML = ''; // svuota container
 
-  // Simula fetch offerte popolari
-  fetch('offerte.json')
-    .then(res => res.json())
-    .then(data => {
-      const cardsContainer = document.querySelector(".cards");
-      cardsContainer.innerHTML = ""; // svuota prima
-      data.forEach(offer => {
-        const div = document.createElement("div");
-        div.classList.add("card");
-        div.innerHTML = `
-          <img src="${offer.img}" alt="${offer.city}" />
-          <h3>${offer.city}</h3>
-          <p>${offer.strutture} strutture</p>
-        `;
-        cardsContainer.appendChild(div);
+    data.forEach(hotel => {
+      const img = `http://localhost:3001/images/${hotel.image[0]}`;
+      
+      const div = document.createElement("div"); // CREAZIONE GIUSTA
+      div.classList.add("card");
+      div.innerHTML = `
+        <img src="${img}" alt="${hotel.name}">
+        <h3>${hotel.name}</h3>
+        <p>${hotel.city} · ${hotel.price}€</p>
+      `;
+
+      // ORA il click funziona
+      div.addEventListener("click", () => {
+        window.location.href = `/hotel.html?id=${hotel._id}`;
       });
-    })
-    .catch(err => console.error("Errore caricamento offerte:", err));
-});
 
+      container.appendChild(div); // aggiungi al DOM
+    });
+  });
+
+
+//  fetch('http://localhost:3001/api/hotels')
+//     .then(res => res.json())
+//     .then(data => {
+//       const container = document.querySelector('.cards');
+//       data.forEach(hotel => {
+//         const img = `http://localhost:3001/images/${hotel.image[0]}`;
+//         container.innerHTML += `
+//           <div class="card">
+//             <img src="${img}" alt="${hotel.name}">
+//             <h3>${hotel.name}</h3>
+//             <p>${hotel.city} · ${hotel.price}€</p>
+//           </div>
+//         `;
+//           div.addEventListener("click", () => {
+//         window.location.href = `/hotel.html?id=${hotel._id}`;
+//       });
+//       });
+//          container.appendChild(div);
+    //});
+ });
+ 
 
 
 

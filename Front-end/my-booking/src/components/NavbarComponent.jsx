@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { PersonCircle } from 'react-bootstrap-icons';
 
 
+
 export default function NavbarComponent({ isLoggedIn = false }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
@@ -25,6 +26,9 @@ export default function NavbarComponent({ isLoggedIn = false }) {
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
   }, [isMenuOpen]);
+  const hanleRegistraLatuaStrutturaClick = () =>{
+    navigate("registralatuastruttura")
+  }
   const handleLoginClick = () => {
   navigate("/login");
 };
@@ -34,6 +38,8 @@ const handleRegisterClick = () => {
 };
 
   return (
+    <>
+    
     <header className="booking-header">
       <div className="booking-container">
         <div className="booking-nav" ref={menuRef} role="navigation" aria-label="Main navigation">
@@ -102,7 +108,8 @@ const handleRegisterClick = () => {
 
               {!isLoggedIn ? (
                 <div className="booking-mobile-auth">
-                   <Link to="/Registra la tua struttura" className="booking-btn booking-btn-primary booking-btn-full">Registra la tua struttura</Link>
+                   <Link to="/Registra la tua struttura" className="booking-btn booking-btn-primary booking-btn-full">
+                   <button onClick={hanleRegistraLatuaStrutturaClick}>Registra la tua struttura</button></Link>
                     <Link to="/Register" className="booking-btn booking-btn-primary booking-btn-full"><button onClick={handleRegisterClick}>Iscriviti</button></Link>
                   <Link to="/Login" className="booking-btn booking-btn-secondary booking-btn-full"><button onClick={handleLoginClick}>Login</button></Link>
                  
@@ -119,6 +126,7 @@ const handleRegisterClick = () => {
         </div>
       </div>
     </header>
+    </>
   );
 }
 

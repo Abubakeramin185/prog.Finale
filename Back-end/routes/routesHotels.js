@@ -37,6 +37,7 @@ router.get('/:id', async (req, res) => {
 });
 
 
+
 // Crea un nuovo hotel
 router.post('/', async (req, res) => {
   try {

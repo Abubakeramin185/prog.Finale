@@ -17,11 +17,11 @@ export default function FormLogin() {
   }
 
   const formSubmitHandler = () => {
-    axios.post('http://localhost:3001/auth/login', user)
+    axios.post('http://localhost:3001/api/author/login', user)
         .then(response => {
-          setError(null);
-          localStorage.setItem('userLogin', response.data)
-          navigate('/users')
+          console.log('Login OK', response.data);
+          localStorage.setItem('token', response.data)
+          navigate('/')
         })
         .catch(error => setError(error.response.data)) 
  }

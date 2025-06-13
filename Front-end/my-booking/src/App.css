@@ -24,7 +24,7 @@ nav.booking-mobile-nav{
   margin-bottom: 40px;
 }
 a.booking-btn.booking-btn-secondary.booking-btn-full{
-  padding: 22px;
+  padding: 23px;
   
 }
 a.booking-btn.booking-btn-secondary.booking-btn-full{
@@ -36,19 +36,22 @@ button.booking-menu-toggle{
   top: -50px;
   color: #1b1a1a;
 }
+
 .row {
   display: flex;
   flex-wrap: wrap;         /* va a capo se serve su mobile */
   margin-left: -10px;      /* per gestire il gutter */
   margin-right: -10px;
-  gap: 20px;
-  margin-left: 0.5rem;
-  margin-right: 1.5rem;
+  gap: 60px;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  justify-content: center;
 }
 
 .col {
   flex: 1;                 /* ogni colonna si adatta allo spazio disponibile */
-  padding: 20px;           /* gutter tra colonne */
+  padding-left: 10px;
+  padding-right: 10px;          /* gutter tra colonne */
   min-width: 200px;        /* opzionale: impedisce colonne troppo strette */
   background-color: #f0f0f0;
   border-radius: 6px;
@@ -56,7 +59,8 @@ button.booking-menu-toggle{
   margin-bottom: 20px;
   margin-bottom: 1rem;
   margin-left: 0.5rem;
-  margin-right: 1.5rem;
+   margin-right: 1.5rem;
+   
   border: 0;
 }
 div.mt-4.mb-5.container {
