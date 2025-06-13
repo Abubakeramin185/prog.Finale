@@ -123,7 +123,7 @@
 
 
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Container, Card, Badge, Spinner, Carousel } from 'react-bootstrap';
 import { BsStarFill } from 'react-icons/bs';
 import axios from 'axios';
@@ -132,6 +132,7 @@ export default function HotelDetailPage() {
   const { id } = useParams();
   const [hotel, setHotel] = useState(null);
   const [loading, setLoading] = useState(true);
+  
 
   useEffect(() => {
     const fetchHotels = async () => {
@@ -145,6 +146,8 @@ export default function HotelDetailPage() {
         setLoading(false);
       }
     };
+    
+
 
     fetchHotels();
   }, [id]);
@@ -200,6 +203,8 @@ export default function HotelDetailPage() {
             <strong>Prezzo:</strong> €{hotel.price} / notte<br />
             {hotel.rating && <>⭐ Valutazione: {hotel.rating} / 10<br /></>}
             {hotel.description && <><strong>Descrizione:</strong> {hotel.description}<br /></>}
+        
+             
           </Card.Text>
         </Card.Body>
       </Card>

@@ -8,6 +8,7 @@ import AreaCommenti from './AreaCommenti';
 import FooterComponent from './FooterComponent';
 import { Container, Row, Col, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+// import BookingPage from './BookingPage';
 
 export default function HomePage() {
   const [hotels, setHotels] = useState([]);
@@ -46,6 +47,7 @@ export default function HomePage() {
   return (
     <>
       <SearchBar />
+      {/* <BookingPage/> */}
       <Filters />
       <Offers />
 
