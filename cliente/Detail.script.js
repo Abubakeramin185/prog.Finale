@@ -26,4 +26,5 @@
           alert("Errore nel caricamento dell'hotel.");
           console.error(err);
         });
+        window.location.href = `/hotel.html?id=${hotel._id}`;
     }
