@@ -1,33 +1,37 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, Card, Alert } from 'react-bootstrap';
 
-const dummyFlights = [
-  { id: 1, from: 'Roma', to: 'Londra', date: '2025-06-10', airline: 'Ryanair', price: 59, time: '10:30 - 12:00' },
-  { id: 2, from: 'Roma', to: 'Madrid', date: '2025-06-10', airline: 'ITA Airways', price: 89, time: '14:00 - 16:30' },
-];
-
 export default function FlightsPage() {
   const [from, setFrom] = useState('');
   const [to, setTo] = useState('');
   const [date, setDate] = useState('');
   const [results, setResults] = useState([]);
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleSearch = (e) => {
+  const handleSearch = async (e) => {
     e.preventDefault();
     if (!from || !to || !date) {
       setError('Tutti i campi sono obbligatori');
       return;
     }
 
-    const matches = dummyFlights.filter(f =>
-      f.from.toLowerCase() === from.toLowerCase() &&
-      f.to.toLowerCase() === to.toLowerCase() &&
-      f.date === date
-    );
-
-    setResults(matches);
     setError('');
+    setLoading(true);
+    setResults([]);
+
+    try {
+      const res = await fetch(`http://localhost:3001/api/flights?from=${from}&to=${to}&date=${date}`);
+      if (!res.ok) throw new Error('Errore nella fetch');
+
+      const data = await res.json();
+      setResults(data);
+    } catch (err) {
+      setError('Errore nel recupero dei voli');
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -53,10 +57,11 @@ export default function FlightsPage() {
         </Row>
       </Form>
 
+      {loading && <p>Caricamento...</p>}
       {error && <Alert variant="danger">{error}</Alert>}
 
       {results.map(flight => (
-        <Card key={flight.id} className="mb-3">
+        <Card key={flight._id || flight.id} className="mb-3">
           <Card.Body>
             <Card.Title>{flight.from} → {flight.to}</Card.Title>
             <Card.Text>
@@ -69,7 +74,7 @@ export default function FlightsPage() {
         </Card>
       ))}
 
-      {results.length === 0 && !error && <p>Nessun volo trovato</p>}
+      {!loading && results.length === 0 && !error && <p>Nessun volo trovato</p>}
     </Container>
   );
 }

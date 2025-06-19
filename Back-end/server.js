@@ -15,6 +15,7 @@ import authMiddleware from './middleware/authMiddleware.js';
 import uploadRouutes from './routes/uploadRouutes.js';
 import hotelsRoute from './hotelRoutes/hotels.js';
 import Hotel from './models/hotelsSchema.js';
+import routesFlights from './routes/routesFlights.js'
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -36,6 +37,7 @@ app.use('/api/author', routerAuthenticators);
 app.use('/api', uploadRouutes);
 app.use('/api/hotels', routesHotels); // Nessun auth qui, solo nei singoli metodi del file
 app.use('/api/users', routesUser);
+app.use('/api/flights', routesFlights)
 app.use('/api/bookings', authMiddleware, routesBookings);
 app.use('/api', hotelsRoute);
 app.use('/api', multre);
@@ -51,23 +53,23 @@ app.get('/api/hotels', async (req, res) => {
 });
 
 // GET singolo hotel
-app.get('/api/hotels/:id', async (req, res) => {
-  try {
-    const hotel = await Hotel.findById(req.params.id);
-    if (!hotel) return res.status(404).json({ error: "Hotel non trovato" });
-    res.json(hotel);
-  } catch (err) {
-    res.status(500).json({ error: 'Errore interno' });
-  }
-});
+// app.get('/api/hotels/:id', async (req, res) => {
+//   try {
+//     const hotel = await Hotel.findById(req.params.id);
+//     if (!hotel) return res.status(404).json({ error: "Hotel non trovato" });
+//     res.json(hotel);
+//   } catch (err) {
+//     res.status(500).json({ error: 'Errore interno' });
+//   }
+// });
 
 // START server
-app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(` Server running on port ${PORT}`));
 
 
 
 
-
+export default app;
 
 
 

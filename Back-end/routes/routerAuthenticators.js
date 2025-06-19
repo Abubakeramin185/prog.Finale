@@ -30,10 +30,24 @@ router.post('/register', async (req, res) => {
 //  const userSave = await user.save()
 //   return res.status(201).json(userSave)
 // const password = req.body.pasword;
-const { fullname, username, email, password } = req.body;
-if (!password) {
-  return res.status(400).json({ message: "Password is required" });
-}
+// const { fullname, username, email, password } = req.body;
+// if (!password) {
+//   return res.status(400).json({ message: "Password is required" });
+// }
+ const { fullname, email, password } = req.body;
+
+  if (!fullname || !email || !password) {
+    return res.status(400).json({ error: 'Tutti i campi sono obbligatori' });
+  }
+
+  try {
+    const newUser = new user({ fullname, email, password });
+    await newUser.save();
+    res.status(201).json({ message: 'Utente registrato con successo' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Errore nel salvataggio dell\'utente' });
+  }
 const hashedPassword = await bcrypt.hash(password, seltRounds);
 
 const user= new userModel({

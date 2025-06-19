@@ -34,10 +34,15 @@ header nav ul {
   gap: 1.5rem;
 }
 
+
 header nav a {
+
   color: white;
   text-decoration: none;
   font-weight: bold;
+}
+a{
+  
 }
 
 header nav a:hover {

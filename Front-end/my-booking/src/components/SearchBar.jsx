@@ -7,6 +7,7 @@ export default function SearchBar() {
   const [checkIn, setCheckIn] = useState('');
   const [checkOut, setCheckOut] = useState('');
   const navigate = useNavigate();
+  
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -18,6 +19,9 @@ export default function SearchBar() {
 
     navigate(`/hotels?${queryParams}`);
   };
+  const handlePrenota = () =>{
+    navigate('prenota')
+  }
 
   return (
     <Form onSubmit={handleSearch}>
@@ -45,6 +49,7 @@ export default function SearchBar() {
           />
         </Col>
         <Col sm={12} md={2}>
+         <Button type="submit" variant="primary" className="w-100" onClick={handlePrenota} >Prenota</Button>
           <Button type="submit" variant="primary" className="w-100">Cerca</Button>
         </Col>
       </Row>

@@ -52,125 +52,42 @@ fetch('http://localhost:3001/api/hotels')
   .then(res => res.json())
   .then(data => {
     const container = document.querySelector('.cards');
-    container.innerHTML = ''; // svuota container
+    container.innerHTML = ''; // svuota
 
     data.forEach(hotel => {
-      const img = `http://localhost:3001/images/${hotel.image[0]}`;
-      
-      const div = document.createElement("div"); // CREAZIONE GIUSTA
+      const div = document.createElement("div");
       div.classList.add("card");
+
+      // crea blocco immagini
+      const imgBlock = hotel.image.map(imgUrl => 
+        `<img src="${imgUrl}" alt="${hotel.name}" style="width: 100%; max-width: 300px; margin: 5px;">`
+      ).join('');
+
       div.innerHTML = `
-        <img src="${img}" alt="${hotel.name}">
+        ${imgBlock}
         <h3>${hotel.name}</h3>
         <p>${hotel.city} · ${hotel.price}€</p>
       `;
 
-      // ORA il click funziona
-      div.addEventListener("click", () => {
-        window.location.href = `/hotel.html?id=${hotel._id}`;
-      });
+      // div.addEventListener("click", () => {
+      //   window.location.href = `/hotel.html?id=${hotel._id}`;
+      // });
+      div.addEventListener("click", (e) => {
+  // Solo se clicco su img o sulla card
+  const isImage = e.target.tagName.toLowerCase() === 'img';
+  const isCard = e.currentTarget === e.target || isImage;
 
-      container.appendChild(div); // aggiungi al DOM
+  if (isCard) {
+    window.location.href = `/hotel.html?id=${hotel._id}`;
+  }
+});
+
+
+      container.appendChild(div);
     });
+  })
+  .catch(err => {
+    console.error("Errore nel recupero hotel:", err);
   });
-
-
-//  fetch('http://localhost:3001/api/hotels')
-//     .then(res => res.json())
-//     .then(data => {
-//       const container = document.querySelector('.cards');
-//       data.forEach(hotel => {
-//         const img = `http://localhost:3001/images/${hotel.image[0]}`;
-//         container.innerHTML += `
-//           <div class="card">
-//             <img src="${img}" alt="${hotel.name}">
-//             <h3>${hotel.name}</h3>
-//             <p>${hotel.city} · ${hotel.price}€</p>
-//           </div>
-//         `;
-//           div.addEventListener("click", () => {
-//         window.location.href = `/hotel.html?id=${hotel._id}`;
-//       });
-//       });
-//          container.appendChild(div);
-    //});
  });
- 
-
-
-
-
-
-//   document.addEventListener("DOMContentLoaded", function () {
-//     const checkinInput = document.getElementById("checkin");
-//     const checkoutInput = document.getElementById("checkout");
-//     const guestsInput = document.getElementById("guests");
-//     const pricePerNight = parseFloat(document.getElementById("pricePerNight").textContent);
-//     const totalPriceDisplay = document.getElementById("totalPrice");
-//     const bookNowButton = document.getElementById("bookNow");
-
-//     let  fullName =[];
-//     let userName = [];
-//     let email = [];
-//     let password = [];
-
-//     function calculateNights() {
-//       const checkin = new Date(checkinInput.value);
-//       const checkout = new Date(checkoutInput.value);
-//       const timeDiff = checkout - checkin;
-//       const nights = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-//       return nights > 0 ? nights : 0;
-//     }
-// //La funzione fetch
-
-//  fetch('http://localhost:3001/api/auth/register', {
-//                 method: 'POST',
-//                 body: JSON.stringify({
-//                     fullname: fullName,
-//                     username: userName,
-//                     email: email,
-//                     password: password
-//                 }),
-//                 headers: {
-//                     'Content-type': 'application/json; charset=UTF-8',
-//                 },
-//                 })
-//                 .then((response) => response.json())
-//                 .then((json) => console.log(json));
-//         })
-
-
-
-
-
-//     function updateTotalPrice() {
-//       const nights = calculateNights();
-//       const guests = parseInt(guestsInput.value, 10);
-//       const total = nights * pricePerNight * guests;
-//       totalPriceDisplay.textContent = total.toFixed(2);
-//     }
-
-//     checkinInput.addEventListener("change", updateTotalPrice);
-//     checkoutInput.addEventListener("change", updateTotalPrice);
-//     guestsInput.addEventListener("input", updateTotalPrice);
-
-//     bookNowButton.addEventListener("click", function (e) {
-//       e.preventDefault(); // Evita l'invio del form
-
-//       const nights = calculateNights();
-//       const guests = parseInt(guestsInput.value, 10);
-
-//       if (!checkinInput.value || !checkoutInput.value || nights <= 0) {
-//         alert("Per favore inserisci date valide.");
-//         return;
-//       }
-
-//       if (guests < 1 || isNaN(guests)) {
-//         alert("Inserisci almeno 1 ospite.");
-//         return;
-//       }
-
-//       alert("Prenotazione completata!\nPrezzo totale: " + totalPriceDisplay.textContent + "€");
-//     });
-  
 

@@ -47,7 +47,7 @@ const handleRegisterClick = () => {
           {/* Logo */}
           <div className="booking-logo ms-auto">
             <span className="booking-logo-icon">🏨</span>
-            <span className="booking-logo-text">Miraviglia.Tripicale@com</span>
+            <span className="booking-logo-text">Meraviglia.Tripicale@com</span>
           </div>
 
           {/* Hamburger button */}

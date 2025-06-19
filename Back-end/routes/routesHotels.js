@@ -26,15 +26,28 @@ router.get('/', async (req, res) => {
 });
 
 // Ottieni un hotel per ID
+// router.get('/:id', async (req, res) => {
+//   try {
+//     const hotel = await Hotel.findById(req.params.id);
+//     if (!hotel) return res.status(404).json({ error: 'Hotel non trovato' });
+//     res.json(hotel);
+//   } catch (error) {
+//     res.status(500).json({ error: 'Errore nel recupero dell’hotel' });
+//   }
+// });
+// GET hotel per ID
 router.get('/:id', async (req, res) => {
   try {
     const hotel = await Hotel.findById(req.params.id);
-    if (!hotel) return res.status(404).json({ error: 'Hotel non trovato' });
+    if (!hotel) {
+      return res.status(404).json({ error: 'Hotel non trovato' });
+    }
     res.json(hotel);
-  } catch (error) {
-    res.status(500).json({ error: 'Errore nel recupero dell’hotel' });
+  } catch (err) {
+    res.status(500).json({ error: 'Errore nel server' });
   }
 });
+
 
 
 

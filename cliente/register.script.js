@@ -11,7 +11,7 @@
 
 
       // Esempio chiamata POST al backend (devi avere il server attivo)
-      fetch("http://localhost:3001/api/auth/register", {
+      fetch("http://localhost:3001/api/author/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
